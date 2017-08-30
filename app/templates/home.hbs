@@ -1,0 +1,19 @@
+<h3 class="board-title">{{model.board}}</h3>
+<div class="board-container">
+  <div class="list-card">
+    {{#each model.lists as |list|}}
+      <div class="list-title">{{list.title}}</div>
+    {{/each}}
+    <div class="task-container">
+      <button class="add-task">Add New Task</button>
+    </div>
+
+  </div>
+
+
+  <div class="add-list">
+    Add New List
+    <h1>+</h1>
+  </div>
+
+</div>
