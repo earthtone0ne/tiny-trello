@@ -1,14 +1,17 @@
 <h3 class="board-title">{{model.board}}</h3>
 <div class="board-container">
+  {{#each model.lists as |list|}}
   <div class="list-card">
-    {{#each model.lists as |list|}}
-      <div class="list-title">{{list.title}}</div>
+    <div class="list-title">{{list.title}}</div>
+
+    {{#each list.tasks as |task| }}
+        <div class="task-title">[ ] {{task.title}}</div>
     {{/each}}
     <div class="task-container">
       <button class="add-task">Add New Task</button>
     </div>
-
   </div>
+  {{/each}}
 
 
   <div class="add-list">

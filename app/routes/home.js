@@ -6,7 +6,12 @@ export default Ember.Route.extend({
     return {
       board: "Current Board: '" + defaultBoard.compute() + "'",
       lists: [{
-        title: 'To Start'
+        title: 'To Start',
+        tasks: [ {title: 'First task'}, {title: 'Another task'}]
+      },
+      {
+        title: 'To Finish',
+        tasks: [ {title: 'Only task'}]
       }]
     }
   }
