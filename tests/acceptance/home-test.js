@@ -25,7 +25,13 @@ test('shows tasks in lists', function(assert){
 });
 
 test('adds new lists', function(assert){
-
+  visit('/');
+  click('.add-list');
+  fillIn('.add-list input','NewOne');
+  keyEvent('.add-list input', 'keyup', 13);
+  andThen(function() {
+    assert.equal(find('.list-title').last().text().trim().slice(0,6), 'NewOne', 'adds new list')
+  })
 });
 
 test('adds new tasks', function(assert){

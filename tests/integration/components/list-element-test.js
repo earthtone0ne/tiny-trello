@@ -1,5 +1,11 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import Ember from 'ember';
+
+let list = Ember.Object.create({
+  title: "First",
+  tasks: [{title: 'A Task'}]
+})
 
 moduleForComponent('list-element', 'Integration | Component | list element', {
   integration: true
@@ -7,19 +13,10 @@ moduleForComponent('list-element', 'Integration | Component | list element', {
 
 test('it renders', function(assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  this.set('list', list);
+  this.render(hbs`{{list-element list=list}}`);
 
-  this.render(hbs`{{list-element}}`);
+  assert.equal(this.$(".list-title").text().trim(), 'First');
+  assert.equal(this.$(".task-title p").text().trim(), 'A Task');
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#list-element}}
-      template block text
-    {{/list-element}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });

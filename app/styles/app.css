@@ -66,6 +66,9 @@
   box-shadow: -1px 1px 2px #aaa;
   text-align: left;
 }
+.task-title>p::before {
+  content: "[ ] "
+}
 .add-list {
   width: 180px;
   height: 100%;
