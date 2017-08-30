@@ -1,0 +1,13 @@
+
+<div class="list-title">{{list.title}}</div>
+
+<div class="task-container">
+  {{#each list.tasks as |task| }}
+  <div class="task-title">
+    [ ] {{task.title}}
+  </div>
+  {{/each}}
+
+  <button class="add-task">Add New Task</button>
+</div>
+

@@ -16,7 +16,7 @@ test('',function(assert) {
   assert.equal(task.get('title'), 'Test Title', 'gets task title');
 })
 
-test('list-item relationship', function(assert) {
+test('list-element relationship', function(assert) {
   let TaskItem = this.store().modelFor('task-item');
   let relationship = Ember.get(TaskItem, 'relationshipsByName').get('list');
   assert.equal(relationship.key, 'list', 'has relationship to list');

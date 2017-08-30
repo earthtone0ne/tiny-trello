@@ -1,35 +1,46 @@
-// import defaultBoard from '../helpers/default-board';
-
 export default function() {
 
   this.namespace = '/api';
 
-  this.get('/lists', function(){
+  this.get('/task-lists', function() {
     return {
       data: [{
-        type: 'lists',
-        id: '101',
+        type: 'task-lists',
+        id: 'L01',
         attributes: {
           title: 'To Start',
-          // board:  defaultBoard.compute(),
-          // tasks: []
+          board:  'AllTheThings'
+        },
+        relationships: {
+          tasks: {
+            links: { related: "/api/task-items"}
+          }
         }
-      }]
+      }] //,
+      // included: [{
+      //   type: 'task-items',
+      //   id: 'T011',
+      //   attributes: { title: 'A fine task'}
+      // }]
     }
   });
 
-  this.get('/tasks', function(){
+  this.get('/task-items', function() {
     return {
       data: [{
-        type: 'tasks',
-        id: '1001',
+        type: 'task-items',
+        id: 'T001',
         attributes: {
           title: 'Think of a task',
-          list:  101,
-          isDeleted: false,
+          // isDeleted: false,
           description: 'This is a task to come up with tasks. \n\nVery important.'
         }
-      }]
+      }],
+      relationships: {
+        taskList: {
+          links: {related: "/api/task-lists"}
+        }
+      }
     }
   })
 }

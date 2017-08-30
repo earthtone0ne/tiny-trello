@@ -1,18 +1,8 @@
 import Ember from 'ember';
-import defaultBoard from '../helpers/default-board';
 
 export default Ember.Route.extend({
   model() {
-    return {
-      board: "Current Board: '" + defaultBoard.compute() + "'",
-      lists: [{
-        title: 'To Start',
-        tasks: [ {title: 'First task'}, {title: 'Another task'}]
-      },
-      {
-        title: 'To Finish',
-        tasks: [ {title: 'Only task'}]
-      }]
-    }
+    return this.get('store').findAll('task-list')
   }
-});
+})
+
