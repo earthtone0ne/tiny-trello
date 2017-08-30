@@ -1,0 +1,21 @@
+<h3 class="board-title">This board: 'AllTheThings'</h3>
+
+<div class="board-container">
+  {{#each model as |list|}}
+    {{list-element list=list tasks=list.tasks class="list-card"}}
+  {{/each}}
+
+  <div class="add-list" {{action 'toggleEdit'}}>
+    <h4>Add New List</h4>
+
+    <div {{action 'stopProp' bubbles=shouldBubble}}>
+    {{#if pendingAddList }}
+      <label for="addList">New list name:</label>
+        {{input value=newListTitle name="addList" enter="addNewTask" autofocus=pendingAddList}}
+    {{else }}
+        <h1>+</h1>
+
+    {{/if}}</div>
+  </div>
+
+</div>

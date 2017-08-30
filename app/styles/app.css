@@ -1,0 +1,86 @@
+* {
+  font-family: Tahoma, Calibri, sans-serif;
+  color: #333;
+  box-sizing: border-box;
+}
+.app-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  font-size: 4vh;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #69c;
+}
+
+.hammy {
+  font-size: 1.5em;
+  padding: 0px 5px;
+  margin-top: -0.8em;
+  margin-bottom: -0.25em;
+}
+.hammy::before {
+  content: "☑";
+  margin-right: -5vh;
+  font-size: 2.5em;
+  color: rgb(179, 188, 32);
+}
+
+.board-title {
+  position: relative;
+  margin-top: 7em;
+}
+.board-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 330px;
+}
+
+.list-card {
+  text-align: center;
+  width: 180px;
+  height: 100%;
+  margin: 5px;
+  background-color: rgba(179, 188, 32, 0.3);
+  box-shadow: -1px 3px 3px #999;
+}
+
+.list-title {
+  padding: 5px;
+  border-bottom: 1px solid #999;
+  background-color: rgba(179, 188, 32, 0.4);
+}
+
+.list-card button {
+  padding: 10px;
+  margin: 10px;
+  background-color: rgba(179, 188, 32, 0.6);
+}
+.task-title {
+  padding: 5px;
+  margin: 5px;
+  background-color: rgba(250, 253, 250, 1);
+  box-shadow: -1px 1px 2px #aaa;
+  text-align: left;
+}
+.task-title>p::before {
+  content: "[ ] "
+}
+.add-list {
+  width: 180px;
+  height: 100%;
+  margin:  5px;
+  padding: 40px 10px;
+  text-align: center;
+  font-size: 1em;
+  background-color: rgba(179, 188, 32, 0.1);
+  color: #888;
+  border: none;
+  box-shadow: -1px 3px 3px #999;
+}
+.add-list h1 {
+  color: #888;
+}
