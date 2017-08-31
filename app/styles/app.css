@@ -13,6 +13,7 @@
   justify-content: flex-start;
   align-items: center;
   background-color: #69c;
+  box-shadow: -1px 2px 2px #999;
 }
 
 .hammy {
@@ -36,13 +37,15 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  height: 330px;
+  height: 100%;
+  min-height: 300px;
+  overflow-x: auto;
 }
 
 .list-card {
   text-align: center;
   width: 180px;
-  height: 100%;
+  min-height: 240px;
   margin: 5px;
   background-color: rgba(179, 188, 32, 0.3);
   box-shadow: -1px 3px 3px #999;
@@ -59,21 +62,31 @@
   margin: 10px;
   background-color: rgba(179, 188, 32, 0.6);
 }
-.task-title {
-  padding: 5px;
+.task-title, .add-list input, .list-card input {
+  padding: 3px ;
   margin: 5px;
+  font-size: 0.9em;
   background-color: rgba(250, 253, 250, 1);
   box-shadow: -1px 1px 2px #aaa;
   text-align: left;
 }
+
 .task-title>p::before {
   content: "[ ] "
 }
+
+.add-list input, .list-card input {
+  opacity: 0.9;
+}
+.list-card:hover, .add-list:hover {
+  transform: translateY(-1px);
+  box-shadow: -1px 4px 4px #999;
+}
 .add-list {
   width: 180px;
-  height: 100%;
+  min-height: 240px;
   margin:  5px;
-  padding: 40px 10px;
+  padding: 30px 10px;
   text-align: center;
   font-size: 1em;
   background-color: rgba(179, 188, 32, 0.1);
