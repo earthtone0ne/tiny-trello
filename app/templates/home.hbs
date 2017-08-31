@@ -2,7 +2,7 @@
 
 <div class="board-container">
   {{#each model as |list|}}
-    {{list-element list=list tasks=list.tasks class="list-card"}}
+    {{list-element list=list tasks=list.tasks class="list-card" addTask=(action 'addNewTask')}}
   {{/each}}
 
   <div class="add-list" {{action 'toggleEdit'}}>
@@ -11,7 +11,7 @@
     <div {{action 'stopProp' bubbles=shouldBubble}}>
     {{#if pendingAddList }}
       <label for="addList">New list name:</label>
-        {{input value=newListTitle name="addList" enter="addNewTask" autofocus=pendingAddList}}
+        {{input value=newListTitle name="addList" enter="addNewList" autofocus=true}}
     {{else }}
         <h1>+</h1>
 
