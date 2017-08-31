@@ -35,7 +35,13 @@ test('adds new lists', function(assert){
 });
 
 test('adds new tasks', function(assert){
-
+  visit('/');
+  click('.add-task');
+  fillIn('.add-task input','The Thing');
+  keyEvent('.add-task input', 'keyup', 13);
+  andThen(function() {
+    assert.equal(find('.task-title'.last().text().trim().slice(-9), 'The Thing', 'adds new task'))
+  })
 });
 
 test('edits tasks', function(assert){

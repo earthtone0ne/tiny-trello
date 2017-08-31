@@ -69,6 +69,16 @@
 .task-title>p::before {
   content: "[ ] "
 }
+
+.add-list input, .list-card input {
+  opacity: 0.9;
+}
+
+/*.list-card:hover, .add-list:hover {
+  transform: translateY(-1px);
+  box-shadow: -1px 4px 4px #999;
+}*/
+
 .add-list {
   width: 180px;
   height: 100%;
@@ -79,8 +89,64 @@
   background-color: rgba(179, 188, 32, 0.1);
   color: #888;
   border: none;
-  box-shadow: -1px 3px 3px #999;
+  box-shadow: -1px 3px 3px #888;
 }
-.add-list h1 {
+.add-list h4, .add-list h1 {
   color: #888;
+}
+
+
+.modal-overlay {
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(10, 10, 20, 0.5);
+  z-index: 100;
+}
+
+.modal {
+  background-color: white;
+  width: 60vw;
+  margin: 24vh auto;
+  padding: 5vh 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items:  flex-start;
+}
+
+.modal-form {
+  width: 50vw;
+  display: flex;
+  flex-wrap: all;
+}
+
+.modal-form label {
+  min-width: 100px;
+  text-align: left;
+  flex-grow: 1;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+.modal-form .modal-input {
+  margin: 5px;
+  padding: 2px;
+  border: 1px solid #ddd;
+  width: 40vw;
+  min-width: 200px
+}
+.modal-form textarea {
+  box-shadow: -1px 1px 2px #bbb;
+  height: 20vh;
+}
+
+.modal-form button {
+  width: 15vw;
+  margin: 5px 5vw;
+}
+button.delete-btn {
+  background-color: #ef6a53;
+
 }

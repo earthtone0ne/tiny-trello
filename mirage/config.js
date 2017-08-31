@@ -32,8 +32,7 @@ export default function() {
         id: 'T001',
         attributes: {
           title: 'Think of a task',
-          // isDeleted: false,
-          description: 'This is a task to come up with tasks. \n\nVery important.'
+          description: 'Enter an optional description.\n\nKeep your task notes in one place.'
         }
       }],
       relationships: {

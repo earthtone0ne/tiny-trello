@@ -3,11 +3,18 @@
 
 <div class="task-container">
   {{#each list.tasks as |task| }}
-  <div class="task-title">
+  {{#unless task.isDeleted}}
+  <div class="task-title" {{action 'toggleModal'}}>
     <p>{{task.title}}</p>
   </div>
+    {{#if showModal}}
+      {{#task-modal task=task toggleModal=(action 'toggleModal')}}  {{/task-modal}}
+    {{/if}}
+  {{/unless}}
   {{/each}}
 
-  <button class="add-task">Add New Task</button>
+  <div class="add-task">
+   {{input placeholder="Add New Task" value=newTaskTitle enter="handleAddTask" name="addTask"}}
+  </div>
 </div>
 
