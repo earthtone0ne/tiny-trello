@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+
 init () {
     this._super(...arguments);
   },
@@ -9,10 +10,9 @@ init () {
   newTaskTitle: '',
   showModal: false,
 
-
   actions: {
     handleAddTask() {
-      let add = this.get('addNewTask');
+      let add = this.get('addTask');
       let title = this.get('newTaskTitle').replace(/[<>\"]/g,'-').replace(/[/']/g,'\'');
       add(title, this.get('list'));
       this.set('newTaskTitle', '');

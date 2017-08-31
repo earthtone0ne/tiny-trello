@@ -16,12 +16,7 @@ export default function() {
             links: { related: "/api/task-items"}
           }
         }
-      }] //,
-      // included: [{
-      //   type: 'task-items',
-      //   id: 'T011',
-      //   attributes: { title: 'A fine task'}
-      // }]
+      }]
     }
   });
 
@@ -41,5 +36,22 @@ export default function() {
         }
       }
     }
-  })
+  });
+
+  this.post('/task-items', function(db, req) {
+    let params = req.requestBody;
+    if (!params.title) {
+      return false;
+    }
+    return db.taskItems.create({data: params})
+
+  });
+  this.post('/task-lists', function(db /*, req*/) {
+    let params = {title: "Tester"};
+    if (!params.title) {
+      return false;
+    }
+    return db.taskLists.create({data: params})
+
+  });
 }
