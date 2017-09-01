@@ -151,7 +151,11 @@
   width: 15vw;
   margin: 5px 5vw;
 }
-button.delete-btn {
-  background-color: #ef6a53;
 
+.modal-form button.delete-btn {
+  background-color: #ef6a53;
+}
+
+#modal-complete-checkbox {
+ display: inline-block;
 }

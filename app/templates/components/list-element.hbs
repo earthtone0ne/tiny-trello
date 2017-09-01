@@ -3,14 +3,14 @@
 
 <div class="task-container">
   {{#each list.tasks as |task| }}
-  {{#unless task.isDeleted}}
+  {{#if task.isActive}}
   <div class="task-title" {{action 'toggleModal'}}>
     <p>{{task.title}}</p>
   </div>
     {{#if showModal}}
       {{#task-modal task=task toggleModal=(action 'toggleModal')}}  {{/task-modal}}
     {{/if}}
-  {{/unless}}
+  {{/if}}
   {{/each}}
 
   <div class="add-task">
