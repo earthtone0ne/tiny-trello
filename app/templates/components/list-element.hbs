@@ -7,9 +7,9 @@
   <div class="task-title" {{action 'toggleModal' task.id }}>
     <p>{{task.title}}</p>
   </div>
-    {{#is showModal task.id}}
+    {{#if (eq modalTask task.id)}}
       {{task-modal task=task toggleModal=(action 'toggleModal' task.id) }}
-    {{/is}}
+    {{/if}}
   {{/if}}
   {{/each}}
 
