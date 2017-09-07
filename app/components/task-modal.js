@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+
   actions: {
     toggleModal() {
       this.sendAction('toggleModal');
@@ -12,6 +13,10 @@ export default Ember.Component.extend({
         this.get('task').set('isDeleted', true);
         this.sendAction('toggleModal');
       }
+    },
+    handleComplete() {
+      this.sendAction('toggleModal');
+      this.get('task').set('isCompleted', true);
 
     }
   }

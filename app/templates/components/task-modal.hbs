@@ -9,7 +9,9 @@
         {{textarea value=task.description name="desc" class="modal-input"}}</div>
       <div class="modal-checkbox">
         <label for="complete">Mark Complete:</label>
-        <div id="modal-complete-checkbox">{{input type="checkbox" checked=task.isCompleted name="complete"}}</div>
+        <div id="modal-complete-checkbox">
+          {{input type="checkbox" checked=task.isCompleted name="complete" onchange="handleComplet"}}
+        </div>
       </div>
       <div class="modal-form modal-buttons">
         <button {{action 'handleDelete'}} class="delete-btn">Delete Task</button>

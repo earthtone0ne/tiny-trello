@@ -4,12 +4,12 @@
 <div class="task-container">
   {{#each list.tasks as |task| }}
   {{#if task.isActive}}
-  <div class="task-title" {{action 'toggleModal'}}>
+  <div class="task-title" {{action 'toggleModal' task.id }}>
     <p>{{task.title}}</p>
   </div>
-    {{#if showModal}}
-      {{#task-modal task=task toggleModal=(action 'toggleModal')}}  {{/task-modal}}
-    {{/if}}
+    {{#is showModal task.id}}
+      {{task-modal task=task toggleModal=(action 'toggleModal' task.id) }}
+    {{/is}}
   {{/if}}
   {{/each}}
 
