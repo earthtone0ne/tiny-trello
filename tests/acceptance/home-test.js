@@ -30,7 +30,8 @@ test('adds new lists', function(assert){
   fillIn('.add-list input','NewOne');
   keyEvent('.add-list input', 'keyup', 13);
   andThen(function() {
-    assert.equal(find('.list-title').last().text().trim().slice(0,6), 'NewOne', 'adds new list')
+    assert.equal(find('.list-title').last().text().trim().slice(0,6), 'NewOne', 'adds new list');
+    assert.equal(find('.list-title').length, 2, 'now two lists');
   })
 });
 
@@ -40,17 +41,22 @@ test('adds new tasks', function(assert){
   fillIn('.add-task input','The Thing');
   keyEvent('.add-task input', 'keyup', 13);
   andThen(function() {
-    assert.equal(find('.task-title').last().text().trim().slice(-9), 'The Thing', 'adds new task')
+    assert.equal(find('.task-title').last().text().trim(), 'The Thing', 'adds new task');
+    assert.equal(find('.task-title').length, 2, 'now two tasks');
   })
 });
 
 test('edits tasks', function(assert){
   visit('/');
+  click('.add-task');
+  fillIn('.add-task input','Thing');
+  keyEvent('.add-task input', 'keyup', 13);
   click('.task-title');
   click('.modal-input');
   fillIn('.modal-input','New');
   andThen(function() {
-    assert.equal(find('.task-title').text().trim().slice(-9), 'New', 'changed title')
+    assert.equal(find('.task-title').first().text().trim(), 'New', 'new first title');
+    assert.equal(find('.task-title').last().text().trim(), 'Thing', 'same last title');
   })
 });
 
