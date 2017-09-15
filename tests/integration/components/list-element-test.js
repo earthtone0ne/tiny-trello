@@ -4,7 +4,7 @@ import Ember from 'ember';
 
 let list = Ember.Object.create({
   title: "First",
-  tasks: [{title: 'A Task'}]
+  tasks: [{title: 'A Task', isActive: true}]
 })
 
 moduleForComponent('list-element', 'Integration | Component | list element', {

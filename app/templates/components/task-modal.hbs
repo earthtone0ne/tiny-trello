@@ -1,16 +1,18 @@
-
-<div class="modal-overlay" >
-    <div class="modal">
-      <div class="modal-form">
-        <label for="title">Title:</label>
-        {{input value=task.title name="title" class="modal-input"}}</div>
-      <div class="modal-form">
-        <label for="Desc">Description:</label>
-        {{textarea value=task.description name="desc" class="modal-input"}}</div>
-      <div class="modal-form modal-buttons">
-        <button {{action 'handleDelete'}} class="delete-btn">Delete Task</button>
-        <button {{action 'toggleModal'}}>Save and Close</button>
-      </div>
+<div class="modal">
+  <div class="modal-form">
+    <label for="title">Title:</label>
+    {{input value=task.title name="title" class="modal-input"}}</div>
+  <div class="modal-form">
+    <label for="desc">Description:</label>
+    {{textarea value=task.description name="desc" class="modal-input"}}</div>
+  <div class="modal-checkbox">
+    <label for="complete">Mark Complete:</label>
+    <div id="modal-complete-checkbox">
+      {{input type="checkbox" checked=completeChecked name="complete"}}
     </div>
+  </div>
+  <div class="modal-form modal-buttons">
+    <button {{action 'handleDelete'}} class="delete-btn">Delete Task</button>
+    <button {{action 'toggleModal'}}>Save and Close</button>
+  </div>
 </div>
-

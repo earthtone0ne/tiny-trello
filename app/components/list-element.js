@@ -8,6 +8,7 @@ init () {
 
   store: Ember.inject.service(),
   newTaskTitle: '',
+  modalTask: null,
   showModal: false,
 
   actions: {
@@ -17,8 +18,13 @@ init () {
       add(title, this.get('list'));
       this.set('newTaskTitle', '');
     },
-    toggleModal() {
-      this.toggleProperty('showModal');
+    toggleModal(id) {
+      console.log('toggle id', id, 'task',this.get('modalTask'), 'showing', this.get('showModal'))
+      let showing = Boolean(this.get('modalTask'))
+      this.set('showModal', !showing);
+      this.set('modalTask', showing ? null : id);
+      console.log('after: id', id, 'task',this.get('modalTask'), 'showing', this.get('showModal'))
+
     },
   }
 });
