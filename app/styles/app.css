@@ -145,6 +145,10 @@
   margin: 5px 5vw;
 }
 
-button.delete-btn {
+.modal-form button.delete-btn {
   background-color: #ef6a53;
+}
+
+#modal-complete-checkbox {
+ display: inline-block;
 }
