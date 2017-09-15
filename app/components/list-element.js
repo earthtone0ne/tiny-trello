@@ -19,12 +19,9 @@ init () {
       this.set('newTaskTitle', '');
     },
     toggleModal(id) {
-      console.log('toggle id', id, 'task',this.get('modalTask'), 'showing', this.get('showModal'))
       let showing = Boolean(this.get('modalTask'))
       this.set('showModal', !showing);
       this.set('modalTask', showing ? null : id);
-      console.log('after: id', id, 'task',this.get('modalTask'), 'showing', this.get('showModal'))
-
     },
   }
 });
